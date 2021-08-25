@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "simplecov"
+SimpleCov.start
+
 require "liquid/tag/attribute_parser"
 
 RSpec.configure do |config|
