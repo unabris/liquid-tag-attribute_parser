@@ -1,5 +1,11 @@
 # Liquid::Tag::AttributeParser
 
+![Gem](https://img.shields.io/gem/v/liquid-tag-attribute_parser)
+[![Maintainability](https://api.codeclimate.com/v1/badges/5aad2d37fdb6fc3acfd9/maintainability)](https://codeclimate.com/github/unabris/liquid-tag-attribute_parser/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5aad2d37fdb6fc3acfd9/test_coverage)](https://codeclimate.com/github/unabris/liquid-tag-attribute_parser/test_coverage)
+![GitHub](https://img.shields.io/github/license/unabris/liquid-tag-attribute_parser)
+
+
 `Liquid::Tag::AttributeParser` allows you to send familiar `html`-like attributes along with your Liquid tags to receive back a more manageable Ruby hash with all the given information.
 
 ## Installation

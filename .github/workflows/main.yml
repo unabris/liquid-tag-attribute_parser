@@ -2,19 +2,20 @@ name: Ruby
 
 on:
   push:
-    - main
-
+    branches:
+      - main
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         ruby:
-          - 3.0.1
-
+        - '2.6'
+        - '2.7'
+        - '3.0'
+    name: test (ruby ${{ matrix.ruby }})
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
@@ -22,5 +23,9 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
-    - name: Run the default task
-      run: bundle exec rake
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v3.0.0
+      env:
+        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+      with:
+        coverageCommand: bundle exec rake
